@@ -33,7 +33,7 @@
 		    <i class="fab fa-google-plus-square social_link social"></i>
 		</div>
 
-		<button class="entrar_registar">Login/Registar</button>
+		<button id="entrar" class="entrar_registar">Login/Registar</button>
 
 	</div>
 
@@ -98,16 +98,14 @@ $(window).resize(function() {
 });
 
 
-$(window).load(function() {
-	$(window).resize(function() {
-	  if ($(window).width() <= 1059) {
-	  	document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
-	  	document.getElementById("info_contato").innerHTML = "960442568";
-	  } else {
-	  	document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
-	  	document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
-	  }
-	});
+$(window).on('load', function() {
+  if ($(window).width() <= 1059) {
+  	document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
+  	document.getElementById("info_contato").innerHTML = "960442568";
+  } else {
+  	document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
+  	document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
+  }
 });
 
 </script>
