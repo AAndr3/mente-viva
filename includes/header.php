@@ -4,7 +4,7 @@
 
 	<div class="header-wrapper">
 
-		<img src="assets/images/logo.png">
+		<a href="index.php"><img src="assets/images/logo.png"></a>
 
 		<div class="informacoes_icone_div">
 
@@ -33,9 +33,15 @@
 		    <i class="fab fa-google-plus-square social_link social"></i>
 		</div>
 
-		<button class="entrar_registar">Login/Registar</button>
+		<button onclick="login()" class="entrar_registar">Login/Registar</button>
 
 	</div>
+
+	<script>
+		function login() {
+			window.location = "login.php";
+		}
+	</script>
 
 	<!-- /HEADER-WRAPPER-->
 

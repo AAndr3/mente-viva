@@ -1,0 +1,140 @@
+/* BANNER */
+
+.banner {
+	background: url(../images/banner.jpg);
+	max-width: 100% !important;
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 51rem;
+	position: relative;
+}
+
+.banner .banner_info {
+	position: absolute;
+	right:35rem;
+	top:15rem;
+	width: 37rem;
+}
+
+.banner .banner_info h1 {
+	font-size: 4rem;
+	color: white;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.banner .banner_info h3 {
+	color:white;
+	margin-top: -0.2rem;
+}
+
+.banner .banner_info .search_banner {
+	padding:0.7rem 6rem;
+	background-color: red;
+	border:none;
+	outline: none;
+	color:white;
+	font-size: 2.1rem;
+	transition:all 0.7s ease;
+}
+
+.banner .banner_info .seta {
+	vertical-align: middle;
+	font-size:2.6rem;
+	margin-left: 0.7rem;
+}
+
+.banner .banner_info .search_banner:hover {
+	-webkit-box-shadow: inset -7px 13px 64px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset -7px 13px 64px 0px rgba(0,0,0,0.75);
+    box-shadow: inset -7px 13px 64px 0px rgba(0,0,0,0.75);
+}
+
+@media screen and (max-width: 1726px) {
+	.banner .banner_info {
+		right: 20rem;
+	}
+
+}
+
+@media screen and (max-width: 1450px) {
+	.banner .banner_info {
+		right: 11rem;
+	}
+}
+
+@media screen and (max-width: 1263px) {
+	.banner .banner_info {
+		right: 5rem;
+	}
+}
+
+@media screen and (max-width: 1094px) {
+	.banner .banner_info {
+		right: 0;
+	}
+}
+
+@media screen and (max-width: 968px) {
+	.banner .banner_info h1 {
+		font-size: 3rem;
+	}
+	.banner .banner_info {
+		width: 30rem;
+	}
+	.banner {
+		margin-top:-5rem;
+		z-index:-1;
+	}
+}
+
+@media screen and (max-width: 788px) {
+	.banner {
+		margin-top:-7rem;
+	}
+
+	.banner .banner_info {
+		position: absolute;
+		left:1rem;
+		width: 45rem;
+	}
+
+	.banner .banner_info h1  {
+		font-size: 2.5rem;
+	}
+
+	.banner .banner_info h3 {
+		font-size: 2rem;
+	}
+
+}
+
+@media screen and (max-width: 684px) {
+	.banner {
+		margin-top:-12rem;
+	}
+}
+
+@media screen and (max-width: 508px) {
+	.banner {
+		margin-top: -16rem;
+	}
+	.banner .banner_info {
+		margin-top:2rem;
+		position: absolute;
+		width: 35rem;
+	}
+	.banner .banner_info h1 {
+		font-size:2rem;
+	}
+
+	.banner .banner_info h3 {
+		font-size:1.6rem;
+	}
+
+	.banner .banner_info .search_banner {
+		padding:0.6rem 4rem;
+	}
+}	
+/* /BANNER */
