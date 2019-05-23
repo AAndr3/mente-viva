@@ -38,6 +38,7 @@ include('includes/config.php');
 		<h1 id="banner_h1">Escolhe o carro<br>certo para ti</h1>
 		<h3 id="banner_h3">Temos centenas de carros<br>para escolheres</h3>
 		<button class="search_banner">Ler mais<i class="fas fa-angle-right seta"></i></button>
+<<<<<<< HEAD
 	</div>
 
 </div>
@@ -108,10 +109,86 @@ include('includes/config.php');
 <!--/RECENT-CAR-->
 
 
+=======
+	</div>
+
+</div>
+<!--/BANNER-->
+
+<!--RECENT-CAR-->
+<div class="recent_div">
+	
+	<div class="balao">
+		Ultimos anúncios
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+	<div class="car_div_last">
+		<img src="assets/images/carro.jpg">
+
+		<div class="div_line">
+			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
+		</div>
+	</div>
+
+</div>
+<!--/RECENT-CAR-->
+
+
+<!--LOGIN-->
+<?php include('includes/login.php');?>
+
+>>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 
 <!--FOOTER-->
 <?php include('includes/footer.php'); ?>
 <!--/FOOTER-->
+<<<<<<< HEAD
 
 <br>
 <style>
@@ -175,8 +252,96 @@ include('includes/config.php');
     left: 40%;
 }
 </style>
+=======
+
+<br>
+<style>
+
+.recent_div {
+	width: 110rem;
+	margin: auto;
+	max-width: 100%;
+	text-align: center;
+}	
+
+.recent_div .car_div_last {
+	width: 35rem;
+	height: 22rem;
+	position: relative;
+	margin-top: 5rem;
+	display: inline-block;
+	margin-left:0.5rem;
+}
+
+.recent_div .car_div_last img {
+	width: 35rem;
+	height: 22rem;
+}
+
+.recent_div .car_div_last .div_line {
+	width: 100%;
+	background-color: black;
+	position: absolute;
+	bottom:0 ;
+	height: 4rem;
+	width: 35rem;
+	opacity: 0.6;
+}
+
+.recent_div .car_div_last .div_line .especificao {
+	line-height: 4rem;
+	font-size:1.6rem;
+	color:white;
+	text-decoration: none;
+}
+
+.balao{
+    margin: 0 auto; 
+    background: red;
+    font-family: 'open sans';
+    font-size: 2.5rem;
+    line-height: 1em;  
+    border-radius: 15px;
+    width: 250px;
+    height: auto;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 5rem;
+}
+.balao:after{ 
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid red;
+    bottom: -20px; 
+    left: 40%;
+}
+</style>
 
 
+<script>
+
+$(window).resize(function() {
+  if ($(window).width() <= 788) {
+  	document.getElementById("banner_h1").innerHTML = "Escolhe o carro certo para ti";
+  	document.getElementById("banner_h3").innerHTML = "Temos centenas de carros para escolheres</h3>";
+  } 
+});
+>>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
+
+$(window).on('load', function() {
+  	if ($(window).width() <= 788) {
+  		document.getElementById("banner_h1").innerHTML = "Escolhe o carro certo para ti";
+  		document.getElementById("banner_h3").innerHTML = "Temos centenas de carros para escolheres</h3>";
+  	}
+});
+
+<<<<<<< HEAD
 <script>
 $(window).resize(function() {
   if ($(window).width() <= 788) {
@@ -190,6 +355,8 @@ $(window).on('load', function() {
   		document.getElementById("banner_h3").innerHTML = "Temos centenas de carros para escolheres</h3>";
   	}
 });
+=======
+>>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 </script>
 <!--/BANNER-->
 

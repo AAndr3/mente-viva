@@ -294,30 +294,4 @@ header .nav-resto .show {display:block;}
 
 /* /NAV-WRAPPER */
 
-.banner {
-	background: url(../images/banner.jpg);
-	max-width: 100%;
-	background-size: 100%;
-	background-position: center center;
-	height: 51rem;
-	position: relative;
-}
 
-.banner .banner_info {
-	position: absolute;
-	right:35rem;
-	top:15rem;
-	width: 37rem;
-}
-
-.banner .banner_info h1 {
-	font-size: 4rem;
-	color: white;
-	font-weight: 900;
-	text-transform: uppercase;
-}
-
-.banner .banner_info h3 {
-	color:white;
-	margin-top: -0.2rem;
-}

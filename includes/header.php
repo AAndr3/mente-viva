@@ -33,7 +33,11 @@
 		    <i class="fab fa-google-plus-square social_link social"></i>
 		</div>
 
+<<<<<<< HEAD
 		<button onclick="login()" class="entrar_registar">Login/Registar</button>
+=======
+		<button id="entrar" class="entrar_registar">Login/Registar</button>
+>>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 
 	</div>
 
@@ -105,6 +109,7 @@ $(window).resize(function() {
 
 
 $(window).on('load', function() {
+<<<<<<< HEAD
 	if ($(window).width() <= 1059) {
   		document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
   		document.getElementById("info_contato").innerHTML = "960442568";
@@ -112,6 +117,15 @@ $(window).on('load', function() {
   		document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
   		document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
   	}
+=======
+  if ($(window).width() <= 1059) {
+  	document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
+  	document.getElementById("info_contato").innerHTML = "960442568";
+  } else {
+  	document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
+  	document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
+  }
+>>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 });
 
 </script>
