@@ -6,6 +6,8 @@ include('includes/config.php');
 <html>
 <head>
   <title>Mente Viva - Iniciar sessão</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="assets/css/header.css">
   <!--Bootstrap-->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
@@ -19,98 +21,78 @@ include('includes/config.php');
 <?php include('includes/header.php');?>
 <!--/HEADER-->
 
-<div class="banner">
-<br>
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Entrar</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Registar</button>
+<div class="div_back">
+  <div class="div_master">
+    <br><br>
+    <div class="form_div">
+      <div class="form_title">
+        <h1>Iniciar sessão</h1>
+      </div>
+      <br>
+      <input type="text" name="email_entrar" class="inputform" id="email_entrar" placeholder="Email*">
+      <br><br>
+      <input type="text" name="pass_entrar" class="inputform" id="pass_entrar" placeholder="Palavra passe*">
+      <br><br>
+      <input type="submit" name="entrar_submit" class="submitform" id="entrar_submit" value="Entrar">
+    </div>
+  </div>
 </div>
 
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-
-</div>
-
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
 
 
 <style>
-.banner {
-	background: url(assets/images/banner2.jpg);
-	max-width: 100% !important;
-	background-size: 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	height: 51rem;
-	position: relative;
-}
-.tab {
-	width: 50rem;
-	margin:auto;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+  .div_back {
+    background-repeat: no-repeat;
+    background: url('assets/images/slide.jpg');
+    height: 50rem;
+  }
+  .div_master {
+    position: relative;
+    width: 120rem;
+    margin: auto; 
+  }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
- width: 24.89rem;
- padding: 1.5rem 0;
-  transition: 0.3s;
-  font-size: 17px;
-}
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+  .form_div { 
+    background: white;
+    text-align: center;
+    width: 35rem;
+    margin: auto;
+    height: 35rem;
+    
+  }
+  .form_title {
+    margin-top:-2rem;
+    background: red;
+    height: 9rem;
+    border-bottom-right-radius: 15rem;
+    border-bottom-left-radius: 15rem;
+  }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
+  .form_title h1 {
+    color:white;
+    line-height: 8rem;
+  }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  background-color: white;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  width: 50rem;
-  margin: auto;
-}
-	</style>
-</body>
-</html>
+  .form_div .inputform {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.7rem;
+    outline: none;
+  }
+
+  .form_div .submitform {
+    width: 30rem;
+    color:white;
+    padding: 1rem 0;
+    background: red;
+    border:none;
+    font-size:2rem;
+    outline: none;
+  }
+
+  .form_div .errosform {
+    color:red;
+    font-weight: bold;
+    line-height: 1.3rem;
+  }

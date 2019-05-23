@@ -52,7 +52,7 @@
 			<div class="nav-menu" id="menu">
 				<a href="javascript:void(0);" class="icon" onclick="responsivo_menu()"><i class="fa fa-bars"></i></a>
 				<a href="index.php">Home</a>
-				<a href="#pesquisar">Pesquisar</a>
+				<a href="pesquisar.php">Pesquisar</a>
 				<a href="#vender">Vender veículo</a>
 				<a href="#informacoes">Informações</a>
 			</div>
@@ -104,16 +104,14 @@ $(window).resize(function() {
 });
 
 
-$(window).load(function() {
-	$(window).resize(function() {
-	  if ($(window).width() <= 1059) {
-	  	document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
-	  	document.getElementById("info_contato").innerHTML = "960442568";
-	  } else {
-	  	document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
-	  	document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
-	  }
-	});
+$(window).on('load', function() {
+	if ($(window).width() <= 1059) {
+  		document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
+  		document.getElementById("info_contato").innerHTML = "960442568";
+  	} else {
+  		document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
+  		document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
+  	}
 });
 
 </script>
