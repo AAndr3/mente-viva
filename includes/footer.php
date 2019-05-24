@@ -27,42 +27,25 @@
 		position: absolute;
 		bottom:0;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 	footer .footer_text {
 		width: 100rem;
 		margin:auto;
 		max-width: 100%;
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 	footer .footer_text h4{
 		display: inline-block;
 		line-height: 3rem;
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 	footer .footer_text .social {
 		margin-left: 0.5rem;
 		transition: color 0.7s  ease;
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 	footer .footer_text .social:hover {
 		color:red;
 		cursor: pointer;
 	}
-<<<<<<< HEAD
-</style>
-=======
 
 </style>
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3

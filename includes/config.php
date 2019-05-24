@@ -3,7 +3,7 @@
 $nomeutilizador = "localhost";
 $root = "root";
 $password_bd = "";
-$nome_bd = "papcarro";
+$nome_bd = "bd_carros";
 
 $bd = mysqli_connect($nomeutilizador, $root, $password_bd, $nome_bd);
 

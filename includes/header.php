@@ -33,11 +33,13 @@
 		    <i class="fab fa-google-plus-square social_link social"></i>
 		</div>
 
-<<<<<<< HEAD
-		<button onclick="login()" class="entrar_registar">Login/Registar</button>
-=======
-		<button id="entrar" class="entrar_registar">Login/Registar</button>
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
+		<?php 
+		if(!isset($_SESSION['id_utilizador'])) {?>
+		<button onclick="login()" class="entrar_registar">Login/Registar</button> <?php
+	}else {
+		 ?><h3 style="display: inline-block;vertical-align: middle;float: right;margin-top: 1.2rem">Bem vindo/a, <?php echo $_SESSION['nome'];?></h3><?php
+	} ?>
+
 
 	</div>
 
@@ -61,15 +63,19 @@
 				<a href="#informacoes">Informações</a>
 			</div>
 
+
 			<div class="nav-resto">
+			<?php
+			if(isset($_SESSION['id_utilizador'])) {?>
 				<button onclick="myFunction()" class="btn_profile"><i class="fas fa-user"></i><i style="margin-left: 0.6rem;" class="fas fa-angle-down"></i></button>
 					<div id="dropdown-profile" class="dropdown-content">
 					    <a href="#perfil">Perfil</a>
 					    <a href="#pass">Mudar palavra passe</a>
 					    <a href="#email">Mudar email</a>
-   					    <a href="#sari">Sair</a>
+   					    <a href="index.php?logout=1">Sair</a>
 
 					  </div>
+				<?php	}?>
 				<input class="input_search" type="text" placeholder="Pesquisar">
 			</div>
 				
@@ -109,15 +115,6 @@ $(window).resize(function() {
 
 
 $(window).on('load', function() {
-<<<<<<< HEAD
-	if ($(window).width() <= 1059) {
-  		document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
-  		document.getElementById("info_contato").innerHTML = "960442568";
-  	} else {
-  		document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
-  		document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
-  	}
-=======
   if ($(window).width() <= 1059) {
   	document.getElementById("info_email").innerHTML = "menteviva@gmail.com";
   	document.getElementById("info_contato").innerHTML = "960442568";
@@ -125,7 +122,6 @@ $(window).on('load', function() {
   	document.getElementById("info_email").innerHTML = "Para mais informações envie um email para<br><span class='important'>menteviva@gmail.com</span>";
   	document.getElementById("info_contato").innerHTML = "Para ajuda ligue para<br><span class='important'>960442568</span>";
   }
->>>>>>> c75b175d7357facb6cde6468e429efdf0bd291f3
 });
 
 </script>

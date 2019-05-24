@@ -1,0 +1,94 @@
+  .div_back {
+  background: url(../images/slide.jpg); 
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100% !important;
+  }
+  .div_master {
+    width: 120rem;
+    max-width: 100%;
+    margin: auto; 
+  }
+
+  .form_div { 
+    background: white;
+    text-align: center;
+    width: 35rem;
+    margin: auto;
+    height: 40rem;
+  }
+  .form_title {
+    margin-top:-2rem;
+    background: red;
+    height: 9rem;
+    border-bottom-right-radius: 15rem;
+    border-bottom-left-radius: 15rem;
+  }
+
+  .form_title h1 {
+    color:white;
+    line-height: 8rem;
+  }
+
+  .form_div a {
+    color:red;
+    font-weight: bold;
+  }
+
+  .form_div .inputform {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.7rem;
+    outline: none;
+  }
+
+  .form_div .submitform {
+    width: 30rem;
+    color:white;
+    padding: 1rem 0;
+    background: red;
+    border:none;
+    font-size:2rem;
+    outline: none;
+  }
+
+  .form_div .errosform {
+    color:red;
+    font-weight: bold;
+    line-height: 1.3rem;
+  }
+
+  .form_div_registar { 
+    background: white;
+    text-align: center;
+    width: 35rem;
+    margin: auto;
+    height: 55rem;
+  }
+
+  .form_div_registar .inputform {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.7rem;
+    outline: none;
+  }
+
+  .form_div_registar .submitform {
+    width: 30rem;
+    color:white;
+    padding: 1rem 0;
+    background: red;
+    border:none;
+    font-size:2rem;
+    outline: none;
+  }
+
+    .form_div_registar .errosform {
+    color:red;
+    font-weight: bold;
+    line-height: 1.3rem;
+  }
