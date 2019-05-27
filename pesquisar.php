@@ -22,17 +22,8 @@ include('includes/config.php');
 <!--/HEADER-->
 
 
-<div class="pesquisar">
-	<select name="marca">
-		<option value="0">
-		</option>
-	</select>
-</div>
 
+<!--FOOTER-->
+<?php include('includes/footer.php'); ?>
+<!--/FOOTER-->
 
-<style>
-	.pesquisar {
-		width: 120rem;
-		margin: auto;
-	}
-	</style>

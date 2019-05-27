@@ -59,7 +59,7 @@
 				<a href="javascript:void(0);" class="icon" onclick="responsivo_menu()"><i class="fa fa-bars"></i></a>
 				<a href="index.php">Home</a>
 				<a href="pesquisar.php">Pesquisar</a>
-				<a href="#vender">Vender veículo</a>
+				<a href="vender.php">Vender veículo</a>
 				<a href="#informacoes">Informações</a>
 			</div>
 

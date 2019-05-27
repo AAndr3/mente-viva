@@ -14,7 +14,7 @@
 
 <style>
 	body {
-		min-height: 100%;
+		min-height: 100vh;
 		position: relative;
 	}
 	footer {
@@ -23,7 +23,7 @@
 		width: 100%;
 		color:white;
 		height: 5rem;
-		margin-bottom:  -5rem;
+		margin-bottom:  -3rem;
 		position: absolute;
 		bottom:0;
 	}
