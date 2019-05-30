@@ -14,7 +14,7 @@
 
 <style>
 	body {
-		min-height: 100vh;
+		min-height: 95.8vh;
 		position: relative;
 	}
 	footer {

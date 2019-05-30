@@ -1,5 +1,6 @@
 <?php
 
+include('funcoes.php');
 
 /* ENTRAR */
 if(isset($_POST['entrar_submit'])) {

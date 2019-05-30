@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include('includes/config.php');
+include('includes/servidor.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,9 +22,4 @@ include('includes/config.php');
 <?php include('includes/header.php');?>
 <!--/HEADER-->
 
-
-
-<!--FOOTER-->
-<?php include('includes/footer.php'); ?>
-<!--/FOOTER-->
 
