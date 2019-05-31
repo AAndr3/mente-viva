@@ -90,6 +90,31 @@ include('includes/servidor.php');
 	  	<?php echo get_cor();?>
 	  </select>
 	</div>
+
+	<br><br><br>
+
+	<div class="tab_content_select">
+	  <label>Mês*</label><br>
+	  <select id="mes" name="mes" class="selectvender">
+	  	<option value="" selected disabled hidden>Mês</option>
+	  	<?php echo get_mes();?>
+	  </select>
+	</div>
+	<div class="tab_content_select">
+	  <label>Combustível*</label><br>
+	  <select id="combustivel" name="combustivel" class="selectvender">
+	  	<option value="" selected disabled hidden>Combustível</option>
+	  	<?php echo get_combustivel();?>
+	  </select>
+	</div>
+	<div class="tab_content_select">
+	  <label>Tipo de caixa*</label><br>
+	  <select id="caixa" name="caixa" class="selectvender">
+	  	<option value="" selected disabled hidden>Tipo de caixa</option>
+	  	<?php echo get_caixa();?>
+	  </select>
+	</div>
+
 	<br><br>
 </div>
 
@@ -187,19 +212,20 @@ include('includes/servidor.php');
  	</div>
   <br><br>
 </div>
-<button onclick="verificar();">Introduzir</button>
+<button class="botao_vender" onclick="verificar();">Introduzir</button>
+<p id="verifica"></p>
 </div>
 
 <!--/vender-->
 <script>
 
-var selects_id = ["marca", "modelo", "ano", "cor", "distrito", "concelho", "freguesia"];
+var selects_id = ["marca", "modelo", "ano", "cor", "mes", "combustivel", "caixa", "distrito", "concelho", "freguesia"];
 var inputs_id = ["preco", "km", "potencia", "cilindrada", "primeiro_nome", "ultimo_nome", "telemovel", "email"];
 
 
 function verificar() {
 	cont = 0;
-	for(i=0;i<7;i++) {
+	for(i=0;i<10;i++) {
 		var select = document.getElementById(selects_id[i]);
 		if(select.selectedIndex == 0) {
 			select.style.border= "2px solid red";
@@ -209,7 +235,7 @@ function verificar() {
 		}
 	}
 	
-	for (i=0;i<8;i++) {
+	for (i=0;i<9;i++) {
 		var input = document.getElementById(inputs_id[i]);
 		if(input.value == "") {
 			input.style.border = "2px solid red";
@@ -218,7 +244,7 @@ function verificar() {
 			cont = cont + 1;
 		}
 	}
-	if(cont == 15) {
+	if(cont == 18) {
 		contagem = 0;
 		/* PRECO */
 		var preco = document.getElementById("preco");
@@ -332,7 +358,32 @@ function verificar() {
 		}
 
 		if(contagem == 8) {
-			alert("tudo feito");
+			var marca = document.getElementById("marca").value;
+			var modelo = document.getElementById("modelo").value;
+			var ano = document.getElementById("ano").value;
+			var preco = document.getElementById("preco").value;
+			var km = document.getElementById("km").value;
+			var potencia = document.getElementById("potencia").value;
+			var cilindrada = document.getElementById("cilindrada").value;
+			var cor = document.getElementById("cor").value;
+			var mes = document.getElementById("mes").value;
+			var combustivel = document.getElementById("combustivel").value;
+			var caixa = document.getElementById("caixa").value;
+			var primeiro_nome = document.getElementById("primeiro_nome").value;
+			var ultimo_nome = document.getElementById("ultimo_nome").value;
+			var telemovel = document.getElementById("telemovel").value;
+			var email = document.getElementById("email").value;
+			var distrito = document.getElementById("distrito").value;
+			var concelho = document.getElementById("concelho").value;
+			var freguesia = document.getElementById("freguesia").value;
+			$.ajax({
+				type:"post", 
+				url:"includes/vender_veiculo.php",
+				data:{marca, modelo, ano, preco, km, potencia, cilindrada, cor, mes, combustivel, caixa, primeiro_nome, ultimo_nome, telemovel, email, distrito, concelho, freguesia},
+				success:function(data) {
+					$('#verifica').html(data);
+				}
+			});
 		}		
 
 	}

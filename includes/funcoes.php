@@ -35,7 +35,39 @@ function get_distrito() {
 	$query = mysqli_query($GLOBALS['bd'], $sql);
 	while($row = mysqli_fetch_array($query)) {
 			$output .= '<option value="'.utf8_encode($row["distrito"]).'">'.utf8_encode($row["distrito"]).'</option>';
-		}
-		echo $output;
 	}
+	echo $output;
+}
+
+
+function get_mes() {
+	$sql = "SELECT * FROM mes";
+	$query = mysqli_query($GLOBALS['bd'], $sql);
+	while($row = mysqli_fetch_array($query)){
+		$output .= '<option value="'.utf8_encode($row["id_mes"]).'">'.utf8_encode($row["mes"]).'</option>';
+	}
+	echo $output;
+}
+
+
+function get_combustivel() {
+	$sql = "SELECT * FROM combustivel";
+	$query = mysqli_query($GLOBALS['bd'], $sql);
+	while($row = mysqli_fetch_array($query)) {
+		$output .= '<option value="'.utf8_encode($row["id_combustivel"]).'">'.utf8_encode($row["combustivel"]).'</option>';
+	}
+	echo $output;
+}
+
+
+function get_caixa() {
+	$sql = "SELECT * FROM tipo_caixa";
+	$query = mysqli_query($GLOBALS['bd'], $sql);
+	while($row = mysqli_fetch_array($query)){
+		$output.= '<option value='.utf8_encode($row["id_caixa"]).'">'.utf8_encode($row["caixa"]).'</option>';
+	}
+	echo $output;
+}
+
+
 ?>

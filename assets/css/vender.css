@@ -90,3 +90,12 @@
   cursor: pointer;
   font-size: 28px;
 }
+
+.botao_vender {
+	width: 15rem;
+	padding: 1rem 3rem;
+	background: red;
+	color:white;
+	outline: none;
+	font-size: 1.5rem;
+}
