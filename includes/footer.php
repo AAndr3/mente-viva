@@ -1,7 +1,7 @@
 <footer>
 
 	<div class="footer_text">
-		<h4>Copyright © 2017 Car Rental Portal. All Rights Reserved</h4>
+		<h4>Copyright © 2019 Mente Viva. All Rights Reserved</h4>
 		<h4 style="float: right;">Encontre-nos em 
 			<i class="fab fa-facebook-square social_link social"></i>
 		    <i class="fab fa-instagram social_link social"></i>

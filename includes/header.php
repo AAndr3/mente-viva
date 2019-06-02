@@ -37,7 +37,7 @@
 		if(!isset($_SESSION['id_utilizador'])) {?>
 		<button onclick="login()" class="entrar_registar">Login/Registar</button> <?php
 	}else {
-		 ?><h3 style="display: inline-block;vertical-align: middle;float: right;margin-top: 1.2rem">Bem vindo/a, <?php echo $_SESSION['nome'];?></h3><?php
+		 ?><h3 style="display: inline-block;vertical-align: middle;float: right;margin-top: 1.2rem">Bem vindo/a, <?php echo utf8_encode($_SESSION['nome']);?></h3><?php
 	} ?>
 
 

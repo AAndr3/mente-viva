@@ -2,6 +2,11 @@
 session_start();
 include('includes/config.php');
 include('includes/servidor.php');
+
+if(!isset($_SESSION['id_utilizador'])) {
+	header('location:login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +30,6 @@ include('includes/servidor.php');
 <!--HEADER-->
 <?php include('includes/header.php');?>
 <!--/HEADER-->
-
 
 <!--VENDER-->
 
@@ -120,60 +124,13 @@ include('includes/servidor.php');
 
 <div id="Imagens" class="tabcontent">
    <h1 style="text-align: center;font-size: 2.5rem">Imagens da viatura</h1>
-   <br>
-   	<div class="tab_content_img">
-   		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
+ 	
+<article>
+        <label for="files">Select multiple files: </label>
+        <input id="files" type="file" multiple/>
+        <output id="result" />
+</article>
 
-	<br><br><br><br>
-
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-	<div class="tab_content_img">
-		<label style="cursor: pointer;">
-   			<img class="img" src="assets/images/add_image.png">	
-   			<input type="file" style="display: none;">
-   		</label>
-	</div>
-
-  <br><br>
 </div>
 
 <div id="Pessoal" class="tabcontent">
@@ -217,7 +174,57 @@ include('includes/servidor.php');
 </div>
 
 <!--/vender-->
+
+
+<style>
+	.thumbnail {
+		width: 30rem;
+	}
+	.result {
+		background-color: red;
+	}
+	</style>
 <script>
+
+ var filesInput = document.getElementById("files");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "'/> <a href='#' class='remove_pict'>X</a>";
+                    
+                    output.insertBefore(div,null);   
+                    div.children[1].addEventListener("click", function(event){
+                       div.parentNode.removeChild(div);
+                    });         
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+
 
 var selects_id = ["marca", "modelo", "ano", "cor", "mes", "combustivel", "caixa", "distrito", "concelho", "freguesia"];
 var inputs_id = ["preco", "km", "potencia", "cilindrada", "primeiro_nome", "ultimo_nome", "telemovel", "email"];
@@ -235,7 +242,7 @@ function verificar() {
 		}
 	}
 	
-	for (i=0;i<9;i++) {
+	for (i=0;i<8;i++) {
 		var input = document.getElementById(inputs_id[i]);
 		if(input.value == "") {
 			input.style.border = "2px solid red";

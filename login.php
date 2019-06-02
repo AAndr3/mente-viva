@@ -30,8 +30,6 @@ include('includes/servidor.php');
 <?php 
 
 
-
-
 ?>
 
 <!--LOGIN-->
