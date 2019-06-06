@@ -60,6 +60,7 @@ $sql = "INSERT INTO carro (id_utilizador, id_marca, id_modelo, id_ano, id_mes, p
 
 $query = mysqli_query($bd, $sql);
 
-header('location: index.php');
+$id_carro = mysqli_insert_id($bd);
 
-?>
+$_SESSION['id_carro'] = $id_carro;
+

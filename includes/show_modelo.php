@@ -6,7 +6,7 @@ if(isset($_POST["action"])) {
 	{
 		$query = "SELECT * FROM modelo WHERE id_marca = '".$_POST["query"]."' GROUP BY modelo";
 		$result = mysqli_query($connect, $query);
-		$output .= '<option value="" selected disabled hidden>Modelo</option>';
+		$output .= '<option value="0" selected disabled hidden>Modelo</option>';
 		while($row = mysqli_fetch_array($result))
 		{
 			$output .= '<option value="'.$row["id_modelo"].'">'.$row["modelo"].'</option>';

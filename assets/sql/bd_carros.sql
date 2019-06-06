@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Maio-2019 às 17:21
+-- Generation Time: 06-Jun-2019 às 16:54
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.1.28
 
@@ -129,10 +129,16 @@ CREATE TABLE `carro` (
   `cilindrada` int(11) NOT NULL,
   `id_cor` int(11) NOT NULL,
   `id_caixa` int(11) NOT NULL,
-  `id_data` int(11) NOT NULL,
-  `id_distrito` int(11) NOT NULL,
   `id_extras` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `carro`
+--
+
+INSERT INTO `carro` (`id_carro`, `id_utilizador`, `id_marca`, `id_modelo`, `id_ano`, `id_mes`, `preco`, `km`, `id_combustivel`, `potencia`, `cilindrada`, `id_cor`, `id_caixa`, `id_extras`) VALUES
+(19, 1, 3, 10, 67, 3, 20000, 10000, 4, 120, 1900, 3, 3, 19),
+(20, 1, 7, 49, 69, 4, 50000, 20000, 2, 120, 2500, 5, 1, 20);
 
 -- --------------------------------------------------------
 
@@ -279,11 +285,23 @@ INSERT INTO `distrito` (`id_distrito`, `distrito`) VALUES
 
 CREATE TABLE `extras` (
   `id_extras` int(11) NOT NULL,
+  `primeiro_nome` varchar(50) NOT NULL,
+  `ultimo_nome` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `distrito` varchar(50) NOT NULL,
   `concelho` varchar(50) NOT NULL,
   `freguesia` varchar(50) NOT NULL,
-  `telemovel` int(11) NOT NULL
+  `telemovel` int(11) NOT NULL,
+  `data_inserido` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `extras`
+--
+
+INSERT INTO `extras` (`id_extras`, `primeiro_nome`, `ultimo_nome`, `email`, `distrito`, `concelho`, `freguesia`, `telemovel`, `data_inserido`) VALUES
+(19, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Bragança', 'Freixo de Espada à Cinta', 'União das freguesias de Freixo de Espada à Cinta e', 960442568, '2019-06-04 15:15:35'),
+(20, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Figueira da Foz', 'Lavos', 960442568, '2019-06-06 15:06:40');
 
 -- --------------------------------------------------------
 
@@ -303,10 +321,10 @@ CREATE TABLE `imagens` (
 --
 
 INSERT INTO `imagens` (`id_imagens`, `imagens`, `img_principal`, `id_carro`) VALUES
-(1, 'car.png', 0, 0),
-(2, '../../public_html/img/content/226842513.', 1, 37),
-(3, '../../public_html/img/content/532589783.', 1, 38),
-(4, '../../public_html/img/content/579119987.', 0, 38);
+(9, '166052339.jpg', 1, 19),
+(10, '209154252.png', 0, 19),
+(11, '573291406.jpg', 1, 20),
+(12, '564871750.png', 0, 20);
 
 -- --------------------------------------------------------
 
@@ -315,7 +333,7 @@ INSERT INTO `imagens` (`id_imagens`, `imagens`, `img_principal`, `id_carro`) VAL
 --
 
 CREATE TABLE `km_pesquisar` (
-  `id_kim` int(11) NOT NULL,
+  `id_km` int(11) NOT NULL,
   `km` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -323,7 +341,7 @@ CREATE TABLE `km_pesquisar` (
 -- Extraindo dados da tabela `km_pesquisar`
 --
 
-INSERT INTO `km_pesquisar` (`id_kim`, `km`) VALUES
+INSERT INTO `km_pesquisar` (`id_km`, `km`) VALUES
 (1, 0),
 (2, 500),
 (3, 1000),
@@ -3571,13 +3589,12 @@ CREATE TABLE `utilizadores` (
 --
 
 INSERT INTO `utilizadores` (`id_utilizador`, `1nome`, `ultimo_nome`, `email`, `password`, `data_registo`, `ultima_entrada`, `tipo_user`, `contato`, `cidade`, `morada`, `codigo_postal`) VALUES
-(1, '', '', 'andrepedrosaantunes@gmail.com', '12345678', '2019-04-24 23:33:34', '2019-04-24 23:33:34', 0, 960442568, 'Figueira da Foz', 'Rua Dr. Lopes Guimarães nº 56', ''),
+(1, 'André', '', 'andrepedrosaantunes@gmail.com', '12345678', '2019-04-24 23:33:34', '2019-04-24 23:33:34', 0, 960442568, 'Figueira da Foz', 'Rua Dr. Lopes Guimarães nº 56', ''),
 (29, '', '', 'santozito12@gmail.com', '12345678', '2019-04-24 23:47:29', '2019-04-24 23:47:29', 0, 0, '', '', ''),
 (30, '', '', 'andrematias@gmail.com', '12345678', '2019-04-30 09:20:15', '2019-04-30 09:20:15', 0, 0, '', '', ''),
 (31, '', '', 'marcopinheiro@gmail.com', '12345678', '2019-04-30 09:21:22', '2019-04-30 09:21:22', 0, 0, '', '', ''),
 (32, '', '', 'saraantunes@gmail.com', '12345678', '2019-04-30 09:22:38', '2019-04-30 09:22:38', 0, 0, '', '', ''),
-(33, '', '', 'brunolopes@gmail.com', '12345678', '2019-04-30 09:25:47', '2019-04-30 09:25:47', 0, 0, '', '', ''),
-(38, 'André', 'Antunes', 'andrepedrosaantuness@gmail.com', '123', '2019-05-24 15:00:36', '2019-05-24 15:00:36', 0, 0, '', '', '');
+(33, '', '', 'brunolopes@gmail.com', '12345678', '2019-04-30 09:25:47', '2019-04-30 09:25:47', 0, 0, '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -3606,8 +3623,6 @@ ALTER TABLE `carro`
   ADD KEY `id_cilindrada` (`cilindrada`),
   ADD KEY `id_cor` (`id_cor`),
   ADD KEY `id_caixa` (`id_caixa`),
-  ADD KEY `id_data` (`id_data`),
-  ADD KEY `id_distrito` (`id_distrito`),
   ADD KEY `id_contato` (`id_extras`);
 
 --
@@ -3652,7 +3667,7 @@ ALTER TABLE `imagens`
 -- Indexes for table `km_pesquisar`
 --
 ALTER TABLE `km_pesquisar`
-  ADD PRIMARY KEY (`id_kim`);
+  ADD PRIMARY KEY (`id_km`);
 
 --
 -- Indexes for table `marca`
@@ -3718,7 +3733,7 @@ ALTER TABLE `ano`
 -- AUTO_INCREMENT for table `carro`
 --
 ALTER TABLE `carro`
-  MODIFY `id_carro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_carro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `combustivel`
@@ -3748,19 +3763,19 @@ ALTER TABLE `distrito`
 -- AUTO_INCREMENT for table `extras`
 --
 ALTER TABLE `extras`
-  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id_imagens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_imagens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `km_pesquisar`
 --
 ALTER TABLE `km_pesquisar`
-  MODIFY `id_kim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_km` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `marca`
@@ -3808,7 +3823,7 @@ ALTER TABLE `tipo_caixa`
 -- AUTO_INCREMENT for table `utilizadores`
 --
 ALTER TABLE `utilizadores`
-  MODIFY `id_utilizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_utilizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables
@@ -3821,8 +3836,6 @@ ALTER TABLE `carro`
   ADD CONSTRAINT `carro_ibfk_1` FOREIGN KEY (`id_utilizador`) REFERENCES `utilizadores` (`id_utilizador`),
   ADD CONSTRAINT `carro_ibfk_11` FOREIGN KEY (`id_cor`) REFERENCES `cor` (`id_cor`),
   ADD CONSTRAINT `carro_ibfk_12` FOREIGN KEY (`id_caixa`) REFERENCES `tipo_caixa` (`id_caixa`),
-  ADD CONSTRAINT `carro_ibfk_14` FOREIGN KEY (`id_data`) REFERENCES `data_inserido` (`id_data`),
-  ADD CONSTRAINT `carro_ibfk_15` FOREIGN KEY (`id_distrito`) REFERENCES `distrito` (`id_distrito`),
   ADD CONSTRAINT `carro_ibfk_2` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`),
   ADD CONSTRAINT `carro_ibfk_3` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id_modelo`),
   ADD CONSTRAINT `carro_ibfk_4` FOREIGN KEY (`id_ano`) REFERENCES `ano` (`id_ano`),
