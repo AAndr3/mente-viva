@@ -55,59 +55,59 @@ include('includes/servidor.php');
 		Ultimos anúncios
 	</div>
 
+
+<?php 
+
+$sql = "SELECT * FROM carro LIMIT 6";
+$query = mysqli_query($bd, $sql);
+$res = mysqli_fetch_assoc($query);
+$cont = 0;
+do {
+
+	$cont = $cont + 1;
+
+	$id_carro = $res['id_carro'];
+	$id_marca = $res['id_marca']; //FEITO
+	$id_modelo = $res['id_modelo']; //FEITO
+	$id_ano = $res['id_ano']; //FEITO
+
+
+	$sql_marca = "SELECT * FROM marca WHERE id_marca = '$id_marca'";
+	$query_marca = mysqli_query($bd, $sql_marca);
+	$res_marca = mysqli_fetch_assoc($query_marca);
+	$marca = $res_marca['marca'];
+	
+	$sql_modelo = "SELECT * FROM modelo WHERE id_modelo = '$id_modelo'";
+	$query_modelo = mysqli_query($bd, $sql_modelo);
+	$res_modelo = mysqli_fetch_assoc($query_modelo);
+	$modelo = $res_modelo['modelo'];
+	
+	$sql_ano = "SELECT * FROM ano WHERE id_ano = '$id_ano'";
+	$query_ano = mysqli_query($bd, $sql_ano);
+	$res_ano = mysqli_fetch_assoc($query_ano);
+	$ano = $res_ano['ano'];
+
+
+	$sql_imagens_princ = "SELECT * FROM imagens WHERE id_carro = '$id_carro' AND img_principal = '1'";
+	$query_imagens_princ = mysqli_query($bd, $sql_imagens_princ);
+	$res_imagens_princ = mysqli_fetch_assoc($query_imagens_princ);
+	$imagem_principal = $res_imagens_princ['imagens'];
+
+	?>
 	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
-
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
+		<img src="assets/images/<?php echo $imagem_principal;?>">
+			<div class="div_line">
+				<a class="especificao"><i class="fas fa-car"></i>&ensp;<?php echo $marca;?>&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;<?php echo $modelo;?>
+				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;<?php echo $ano;?></a>
+			</div>
 	</div>
+	<?php 
 
-	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
 
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
-	</div>
 
-	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
+}while($res = mysqli_fetch_assoc($query));
 
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
-	</div>
-
-	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
-
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
-	</div>
-
-	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
-
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
-	</div>
-
-	<div class="car_div_last">
-		<img src="assets/images/carro.jpg">
-
-		<div class="div_line">
-			<a class="especificao"><i class="fas fa-car"></i>&ensp;Mercedes&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;Classe A
-				&ensp;&ensp;<i class="fas fa-calendar-alt"></i>&ensp;2019</a>
-		</div>
-	</div>
+?>
 
 </div>
 <!--/RECENT-CAR-->

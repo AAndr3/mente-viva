@@ -102,6 +102,7 @@ $query = mysqli_query($bd, $sql);
 $cont = mysqli_num_rows($query);
 $res = mysqli_fetch_assoc($query);
 
+if($cont != 0) {
 do {
 	$id_carro = $res['id_carro'];
 	$id_marca = $res['id_marca']; //FEITO
@@ -155,10 +156,6 @@ do {
 	$caixa = $res_caixa["caixa"];
 
 
-	//$sql_imagens = "SELECT * FROM imagens WHERE id_carro = '$id_carro'";
-	//$query_imagens = mysqli_query($bd, $sql_imagens);
-	//$res_imagens = mysqli_fetch_assoc($query_imagens);
-
 	$sql_imagens_princ = "SELECT * FROM imagens WHERE id_carro = '$id_carro' AND img_principal = '1'";
 	$query_imagens_princ = mysqli_query($bd, $sql_imagens_princ);
 	$res_imagens_princ = mysqli_fetch_assoc($query_imagens_princ);
@@ -175,6 +172,15 @@ do {
 	$freguesia = $res_extras['freguesia'];
 	$telemovel = $res_extras['telemovel'];
 	$data_inserido = $res_extras['data_inserido'];
+	$valor = $res_extras['valor'];
+
+	if($valor == "negociavel") {
+		$valor = "Negociável";
+	}
+
+	if($valor == "fixo") {
+		$valor = "Fixo";
+	}
 
 	$km_value = strlen($km);
 
@@ -207,7 +213,7 @@ do {
 
 	
 	?>
-	<div class="resultados">
+	<div class="resultados" onclick="window.location = 'mostrar_carro.php?id_carro=<?php echo $id_carro;?>'">
 		<div class="resultados_div">
 			<img class="main_img" src="assets/images/<?php echo $imagem_principal;?>">
 			<div class="resultados_extras">
@@ -216,17 +222,21 @@ do {
 			</div>
 			<div class="resultados_preco">
 				<h1><?php echo $preco;?>€</h1>
+				<h4 style="margin-bottom: -0.2rem;">Valor <?php echo $valor;?></h4>
 				<i style="margin-right: 0.5rem;" class="fas fa-location-arrow"></i><h4 style="display: inline-block;"><?php echo $distrito;?></h4><br>
 				<button class="contact">Contactar</button>
 			</div>	
 			
 		</div>
-	</div><br>
+	</div><br><br>
 
 	<?php
 
 }while($res = mysqli_fetch_assoc($query));
 
+}else {
+	?><p>Sem resultados</p><?php
+}
 
 ?>
 <style>
@@ -252,12 +262,18 @@ do {
 		font-size: 3.5rem;
 	}
 
+
 	.resultados {
 		position: relative;
 		height: 17rem;
 		border:2px solid grey;
 		text-align: left;
+		transition: 0.7s border;
+		cursor: pointer;
+	}
 
+	.resultados:hover {
+		border:2px solid red;
 	}
 	.resultados_div {
 		position: absolute;

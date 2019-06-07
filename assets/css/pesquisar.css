@@ -1,0 +1,126 @@
+	.pesquisar_div_width .pesquisar {
+		margin-right:5.5rem;
+		font-size: 1.7rem;
+		padding: 1rem 8.9rem;
+		outline: none;
+		border: none;
+		color:white;
+		background: red;
+	}
+
+	.pesquisar_div_width .botaoremover {
+		border: none;
+		background: none;
+		color:red;
+		position: absolute;
+		right:1rem;
+		font-size: 2rem;
+		bottom: 0.5rem;
+		outline: none;
+		display: none;
+	}
+	.div_pesquisar {
+		width: 120rem;
+		margin:auto;
+		position: relative;
+		margin-top: 2rem;
+		text-align: center;
+	}
+	.pesquisar_div_width {
+		text-align: center;
+		display: inline-block;
+		margin-right: 2.2rem;
+		position: relative;
+	}
+	.pesquisar_div_width .select  {
+		width: 25rem;
+		outline: none;
+		height: 3.5rem;
+		border: 1px solid #c0c0c0;
+		-webkit-appearance: none;
+      	-moz-appearance: none;
+      	padding-left: 3px;
+      	background: url(../images/seta.png) no-repeat;
+      	background-size: 7%;
+      	background-position:97% 50%;
+
+	}
+	.pesquisar_div_width .selectpequeno {
+		width: 12.3rem !important;
+      	background-size: 14.5%;
+      	background-position:96% 50%;
+	}
+
+	.small {
+		margin-right: 0rem;
+		font-size:1.4rem;
+	}
+
+	.resultados_preco {
+		float: right;
+		position: absolute;
+		top:0;
+		right: 1rem;
+	}
+
+	.resultados_preco .contact {
+		width:10rem;
+		color:white;
+		background: red;
+		outline: none;
+		text-align: center;
+		border:none;
+		padding: .4rem 0rem;
+	}
+
+	.resultados_preco h1 {
+		font-weight: bold;
+		font-size: 3.5rem;
+	}
+
+	.resultados {
+		position: relative;
+		height: 17rem;
+		border:2px solid grey;
+		text-align: left;
+		transition: 0.7s border;
+		cursor: pointer;
+	}
+
+	.resultados:hover {
+		border:2px solid red;
+	}
+
+	.resultados_div {
+		position: absolute;
+		width: 120rem;
+		height: 17rem;
+		display: inline-block;
+	}
+
+	.resultados_div .main_img {
+		position: absolute;
+		top:0rem;
+		width: 25rem;
+		height: 16.8rem;
+		z-index:-1;
+		margin-left:0rem;
+
+	}
+
+	.resultados_extras {
+		margin-left:25rem;
+		margin-top:-1rem;
+		color:black;
+	}
+
+	.resultados_extras h1 {
+		font-weight: bold;
+		font-size: 5rem;
+		margin-left: 1rem;
+	}
+
+	.resultados_extras h5 {
+		margin-left:1rem;
+		margin-top:2rem;
+	}

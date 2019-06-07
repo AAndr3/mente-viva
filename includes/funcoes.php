@@ -81,7 +81,7 @@ function get_preco() {
 	$sql = "SELECT  * FROM preco_pesquisar";
 	$query = mysqli_query($GLOBALS['bd'], $sql);
 	while($row = mysqli_fetch_array($query)) {
-		$output.= '<option value="'.utf8_encode($row["id_preco"]).'">'.utf8_encode($row["preco"]).'€</option>';
+		$output.= '<option value="'.utf8_encode($row["preco"]).'">'.utf8_encode($row["preco"]).'€</option>';
 	}
 	echo $output;
 }

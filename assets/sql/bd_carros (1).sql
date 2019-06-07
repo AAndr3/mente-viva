@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Jun-2019 às 16:54
+-- Generation Time: 07-Jun-2019 às 17:11
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.1.28
 
@@ -138,7 +138,12 @@ CREATE TABLE `carro` (
 
 INSERT INTO `carro` (`id_carro`, `id_utilizador`, `id_marca`, `id_modelo`, `id_ano`, `id_mes`, `preco`, `km`, `id_combustivel`, `potencia`, `cilindrada`, `id_cor`, `id_caixa`, `id_extras`) VALUES
 (19, 1, 3, 10, 67, 3, 20000, 10000, 4, 120, 1900, 3, 3, 19),
-(20, 1, 7, 49, 69, 4, 50000, 20000, 2, 120, 2500, 5, 1, 20);
+(20, 1, 7, 49, 69, 4, 50000, 20000, 2, 120, 2500, 5, 1, 20),
+(21, 1, 4, 16, 65, 5, 8000, 500000, 2, 120, 2100, 12, 2, 21),
+(22, 1, 6, 31, 66, 4, 50000, 20000, 3, 150, 2500, 2, 1, 22),
+(23, 1, 9, 87, 70, 4, 100000, 1000, 4, 200, 3000, 4, 3, 23),
+(24, 1, 7, 50, 68, 6, 5000, 300000, 2, 150, 1900, 4, 2, 24),
+(25, 1, 7, 46, 56, 4, 5000, 300000, 2, 150, 1900, 5, 1, 25);
 
 -- --------------------------------------------------------
 
@@ -292,16 +297,22 @@ CREATE TABLE `extras` (
   `concelho` varchar(50) NOT NULL,
   `freguesia` varchar(50) NOT NULL,
   `telemovel` int(11) NOT NULL,
-  `data_inserido` datetime NOT NULL
+  `data_inserido` datetime NOT NULL,
+  `valor` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `extras`
 --
 
-INSERT INTO `extras` (`id_extras`, `primeiro_nome`, `ultimo_nome`, `email`, `distrito`, `concelho`, `freguesia`, `telemovel`, `data_inserido`) VALUES
-(19, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Bragança', 'Freixo de Espada à Cinta', 'União das freguesias de Freixo de Espada à Cinta e', 960442568, '2019-06-04 15:15:35'),
-(20, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Figueira da Foz', 'Lavos', 960442568, '2019-06-06 15:06:40');
+INSERT INTO `extras` (`id_extras`, `primeiro_nome`, `ultimo_nome`, `email`, `distrito`, `concelho`, `freguesia`, `telemovel`, `data_inserido`, `valor`) VALUES
+(19, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Bragança', 'Freixo de Espada à Cinta', 'União das freguesias de Freixo de Espada à Cinta e', 960442568, '2019-06-04 15:15:35', 'fixo'),
+(20, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Figueira da Foz', 'Lavos', 960442568, '2019-06-06 15:06:40', 'fixo'),
+(21, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Braga', 'Barcelos', 'Aborim', 960442568, '2019-06-07 09:21:50', 'negociavel'),
+(22, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Figueira da Foz', 'Maiorca', 960442568, '2019-06-07 10:30:46', 'negociavel'),
+(23, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Figueira da Foz', 'Lavos', 960442568, '2019-06-07 10:33:30', 'negociavel'),
+(24, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Coimbra', 'Góis', 'União das freguesias de Cadafaz e Colmeal', 960442568, '2019-06-07 10:35:37', 'fixo'),
+(25, 'André', 'Antunes', 'andrepedrosaantunes@gmail.com', 'Bragança', 'Miranda do Douro', 'União das freguesias de Constantim e Cicouro', 960442568, '2019-06-07 15:23:04', 'negociavel');
 
 -- --------------------------------------------------------
 
@@ -324,7 +335,18 @@ INSERT INTO `imagens` (`id_imagens`, `imagens`, `img_principal`, `id_carro`) VAL
 (9, '166052339.jpg', 1, 19),
 (10, '209154252.png', 0, 19),
 (11, '573291406.jpg', 1, 20),
-(12, '564871750.png', 0, 20);
+(12, '564871750.png', 0, 20),
+(13, '480926905.jpg', 1, 21),
+(14, '827290816.jpg', 0, 21),
+(15, '956659076.jpg', 1, 22),
+(16, '334249075.jpg', 0, 22),
+(17, '197190715.jpg', 1, 23),
+(18, '165322125.png', 0, 23),
+(19, '994813980.jpg', 1, 24),
+(20, '909078079.jpg', 0, 24),
+(21, '178361353.jpg', 1, 25),
+(22, '318707554.jpg', 0, 25),
+(23, '936352655.jpg', 0, 25);
 
 -- --------------------------------------------------------
 
@@ -3733,7 +3755,7 @@ ALTER TABLE `ano`
 -- AUTO_INCREMENT for table `carro`
 --
 ALTER TABLE `carro`
-  MODIFY `id_carro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_carro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `combustivel`
@@ -3763,13 +3785,13 @@ ALTER TABLE `distrito`
 -- AUTO_INCREMENT for table `extras`
 --
 ALTER TABLE `extras`
-  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id_imagens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_imagens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `km_pesquisar`

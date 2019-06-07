@@ -118,6 +118,10 @@ if(!isset($_SESSION['id_utilizador'])) {
 	  	<?php echo get_caixa();?>
 	  </select>
 	</div>
+	<div class="tab_content_select">
+		<input type="radio" id="r1" name="rate" checked="checked" value="fixo">Valor fixo
+ 		<input type="radio" id="r2" name="rate" value="negociavel">Valor negociável
+	</div>
 
 	<br><br>
 </div>
@@ -270,6 +274,14 @@ var inputs_id = ["preco", "km", "potencia", "cilindrada", "primeiro_nome", "ulti
 
 
 function verificar() {
+
+	if (document.getElementById('r1').checked) {
+ 	 	valor = document.getElementById('r1').value;
+	}
+	if (document.getElementById('r2').checked) {
+ 	 valor = document.getElementById('r2').value;
+	}
+
 	cont = 0;
 	for(i=0;i<10;i++) {
 		var select = document.getElementById(selects_id[i]);
@@ -434,7 +446,7 @@ function verificar() {
 			$.ajax({
 				type:"post", 
 				url:"includes/vender_veiculo.php",
-				data:{marca, modelo, ano, preco, km, potencia, cilindrada, cor, mes, combustivel, caixa, primeiro_nome, ultimo_nome, telemovel, email, distrito, concelho, freguesia},
+				data:{marca, modelo, ano, preco, km, potencia, cilindrada, cor, mes, combustivel, caixa, primeiro_nome, ultimo_nome, telemovel, email, distrito, concelho, freguesia, valor},
 				success:function(data) {
 					$('#verifica').html(data);
 				}

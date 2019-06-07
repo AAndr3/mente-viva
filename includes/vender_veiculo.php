@@ -39,6 +39,8 @@ $concelho = $_POST['concelho'];
 
 $freguesia = $_POST['freguesia'];
 
+$valor = $_POST['valor'];
+
 $id_utilizador = $_SESSION['id_utilizador'];
 
 date_default_timezone_set('Europe/Lisbon');
@@ -46,7 +48,7 @@ date_default_timezone_set('Europe/Lisbon');
 $date = date('Y-m-d H:i:s');
 
 
-$sql_extras = "INSERT INTO extras (primeiro_nome, ultimo_nome, email, distrito, concelho, freguesia, telemovel,data_inserido) VALUES ('$primeiro_nome', '$ultimo_nome', '$email', '$distrito', '$concelho', '$freguesia', '$telemovel', '$date')";
+$sql_extras = "INSERT INTO extras (primeiro_nome, ultimo_nome, email, distrito, concelho, freguesia, telemovel,data_inserido, valor) VALUES ('$primeiro_nome', '$ultimo_nome', '$email', '$distrito', '$concelho', '$freguesia', '$telemovel', '$date', '$valor')";
 $query_extras = mysqli_query($bd, $sql_extras);
 $id_extras = mysqli_insert_id($bd);
 
