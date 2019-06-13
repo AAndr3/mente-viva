@@ -58,7 +58,7 @@ include('includes/servidor.php');
 
 <?php 
 
-$sql = "SELECT * FROM carro LIMIT 6";
+$sql = "SELECT * FROM carro  ORDER BY id_carro DESC LIMIT 6";
 $query = mysqli_query($bd, $sql);
 $res = mysqli_fetch_assoc($query);
 $cont = 0;
