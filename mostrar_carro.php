@@ -213,23 +213,7 @@ function previousmodal() {
   left: 3rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .imagens_div {
+  .imagens_div {
       max-width: 100%;
       width: 120rem;
       margin:auto;

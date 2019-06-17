@@ -67,9 +67,9 @@ do {
 	$cont = $cont + 1;
 
 	$id_carro = $res['id_carro'];
-	$id_marca = $res['id_marca']; //FEITO
-	$id_modelo = $res['id_modelo']; //FEITO
-	$id_ano = $res['id_ano']; //FEITO
+	$id_marca = $res['id_marca']; 
+	$id_modelo = $res['id_modelo'];
+	$id_ano = $res['id_ano'];
 
 
 	$sql_marca = "SELECT * FROM marca WHERE id_marca = '$id_marca'";
@@ -94,7 +94,7 @@ do {
 	$imagem_principal = $res_imagens_princ['imagens'];
 
 	?>
-	<div class="car_div_last">
+	<div class="car_div_last" onclick="window.location = 'mostrar_carro.php?id_carro=<?php echo $id_carro;?>'">
 		<img src="assets/images/<?php echo $imagem_principal;?>">
 			<div class="div_line">
 				<a class="especificao"><i class="fas fa-car"></i>&ensp;<?php echo $marca;?>&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;<?php echo $modelo;?>
