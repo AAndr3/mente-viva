@@ -59,16 +59,67 @@ do { ?>
     <h3 style="text-align: center;">André Antunes</h3>
     <h4 style="text-align: center;">Coimbra, Figueira da Foz, Lavos</h4>
     <br>
-    <button class="button">Ver email</button>
-    <br><br><br>
-    <button class="button">Ver nº telemóvel</button>
-    <br><br>
+    <h4 style="text-align: center;font-weight: bold">andrepedrosaantunes@gmail.com</h3>
+    <h4 style="text-align: center;font-weight: bold">960442568</h4>
     <h4 style="text-align: center;">Valor negociável</h4>
     <h4 style="text-align: center;margin-top:2.5rem;">Inserido dia 12/06/2019</h4>
   </div>
 </div>
+<br>
+<div class="mostrarresto">
+  <table border="1">
+    <tr>
+      <th>
+        Marca:
+      </th>
+      <th>
+        Modelo:
+      </th>
+      <th>
+        Ano
+      </th>
+      <th>
+        Mês
+      </th>
+    </tr>
+    <tr>
+      <td>
+        Mercedes
+      </td>
+      <td>
+        Mercedes
+      </td>
+      <td>
+        Mercedes
+      </td>
+      <td>
+        Mercedes
+      </td>
+    </tr>
+  </table>
+
+</div>
 
 
+<style>
+  .mostrarresto {
+    width:120rem;
+    margin:auto;
+    max-width: 100%;
+  }
+  .mostrarresto table {
+    width: 100%;
+  }
+  .mostrarresto th {
+    width:25%;
+    text-align: center;
+    height: 2.5rem;
+  }
+  .mostrarresto td {
+    width:25%;
+    text-align: center;
+  }
+</style>
 
 
 <div id="modalimg" class="modal">
@@ -80,7 +131,7 @@ do { ?>
     </div>
 </div>
 
-
+<?php include('includes/footer.php');?>
 
 <script>
 
@@ -88,12 +139,10 @@ do { ?>
   document.getElementById("previous-modal").addEventListener("click", previousmodal);
 
   function nextmodal() {
-     if(i >= images.length - 1) {
-          i = 0;
-      } else{
-          i = i + 1;
-      }
-    document.getElementById("img1").src = "assets/images/"+images[i];
+      i = i + 1;
+             i = i % images.length; 
+            document.getElementById("img1").src = "assets/images/"+images[i];
+    
   }
 
 
@@ -104,6 +153,8 @@ function previousmodal() {
       i = i -1; 
       document.getElementById("img1").src = "assets/images/"+images[i];
 }
+
+
 
 
 
@@ -132,7 +183,7 @@ function previousmodal() {
 
 .informacoes {
   vertical-align: text-bottom;
-  width:30rem;
+  width:39rem;
   margin: auto;
   display: inline-block;
   height: 45.3rem;
@@ -148,6 +199,7 @@ function previousmodal() {
       font-size: 2rem;
       outline: none;
       text-align: center;
+      transition: all 0.7s ease;
     }
 
     .informacoes .button:hover {
@@ -260,17 +312,24 @@ function previousmodal() {
 
   <script>
     document.getElementById("img").src = "assets/images/" + images[0]; 
-    document.getElementById("next").addEventListener("click", next);
+
+    document.getElementById("next").addEventListener("click", nextItem);
+
     document.getElementById("previous").addEventListener("click", previous);
 
-    function next() {
-      if(i >= images.length - 1) {
-          i = 0;
-      } else{
-          i = i + 1;
-      }
-    document.getElementById("img").src = "assets/images/"+images[i];
+    var x = -1;
+
+    function nextItem() {
+
+            i = i + 1;
+             i = i % images.length; 
+            document.getElementById("img").src = "assets/images/"+images[i];
+
     }
+
+
+
+
 
     function previous() {
       if(i==0) {
