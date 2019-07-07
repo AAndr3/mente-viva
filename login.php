@@ -44,7 +44,7 @@ include('includes/servidor.php');
       <form method="post">
         <?php 
         if(isset($_SESSION['erros'])) { ?>
-         <p><?php echo $_SESSION['erros'];?></p> <?php 
+         <p style="color:red"><?php echo $_SESSION['erros'];?></p> <?php 
         
         }?>
 

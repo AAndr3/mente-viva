@@ -60,18 +60,16 @@
 				<a href="index.php">Home</a>
 				<a href="pesquisar.php">Pesquisar</a>
 				<a href="vender.php">Vender veículo</a>
-				<a href="#informacoes">Informações</a>
 			</div>
 
 
 			<div class="nav-resto">
 			<?php
-			if(isset($_SESSION['id_utilizador'])) {?>
+			if(isset($_SESSION['id_utilizador'])) {
+				$id_utilizador = $_SESSION['id_utilizador'];?>
 				<button onclick="myFunction()" class="btn_profile"><i class="fas fa-user"></i><i style="margin-left: 0.6rem;" class="fas fa-angle-down"></i></button>
 					<div id="dropdown-profile" class="dropdown-content">
-					    <a href="#perfil">Perfil</a>
-					    <a href="#pass">Mudar palavra passe</a>
-					    <a href="#email">Mudar email</a>
+					    <a href="perfil.php?perfil=<?php echo $id_utilizador;?>">Perfil</a>
    					    <a href="index.php?logout=1">Sair</a>
 
 					  </div>

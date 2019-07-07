@@ -16,6 +16,8 @@ include('includes/servidor.php');
   <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -27,7 +29,7 @@ include('includes/servidor.php');
 
 
 <div class="div_pesquisar">
-	<center><h2>Pesquisar carro</center>
+	<center><h2 style="font-family: 'Slabo 27px', serif;">Pesquisar carro</center>
 		<br>
 
 	<div class="pesquisar_div_width">

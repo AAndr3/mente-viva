@@ -42,7 +42,7 @@ include('includes/servidor.php');
 	<div class="banner_info">
 		<h1 id="banner_h1">Escolhe o carro<br>certo para ti</h1>
 		<h3 id="banner_h3">Temos centenas de carros<br>para escolheres</h3>
-		<button class="search_banner">Ler mais<i class="fas fa-angle-right seta"></i></button>
+		<button onclick="window.location = 'pesquisar.php' " class="search_banner">Pesquisar<i class="fas fa-angle-right seta"></i></button>
 	</div>
 
 </div>
@@ -94,7 +94,7 @@ do {
 	$imagem_principal = $res_imagens_princ['imagens'];
 
 	?>
-	<div class="car_div_last" onclick="window.location = 'mostrar_carro.php?id_carro=<?php echo $id_carro;?>'">
+	<div class="car_div_last" style="cursor: pointer;" onclick="window.location = 'mostrar_carro.php?id_carro=<?php echo $id_carro;?>'">
 		<img src="assets/images/<?php echo $imagem_principal;?>">
 			<div class="div_line">
 				<a class="especificao"><i class="fas fa-car"></i>&ensp;<?php echo $marca;?>&ensp;&ensp;<i class="fas fa-car-side"></i>&ensp;<?php echo $modelo;?>

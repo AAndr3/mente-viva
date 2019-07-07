@@ -22,6 +22,8 @@ if(!isset($_SESSION['id_utilizador'])) {
   <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+
 
 
 </head>
@@ -46,7 +48,8 @@ if(!isset($_SESSION['id_utilizador'])) {
 
 
 <div id="Carro" class="tabcontent">
-  <h1 style="text-align: center;font-size: 2.5rem">Dados da viatura</h1>
+  <h1 style="text-align: center;font-size: 2.5rem;font-family: 'Mountains of Christmas', cursive;
+">Dados da viatura</h1>
   <br>
 	 <div class="tab_content_select">
 	  <label>Marca*</label><br>
@@ -127,7 +130,8 @@ if(!isset($_SESSION['id_utilizador'])) {
 </div>
 
 <div id="Imagens" class="tabcontent">
-   <h1 style="text-align: center;font-size: 2.5rem">Imagens da viatura</h1>
+   <h1 style="text-align: center;font-size: 2.5rem;font-family: 'Mountains of Christmas', cursive;
+">Imagens da viatura</h1>
  	
    <label style="position: relative;margin-right: 2rem;">
    		<img class="imgupload" id="img1_img" src="assets/images/add.png">
@@ -170,7 +174,8 @@ if(!isset($_SESSION['id_utilizador'])) {
 </div>
 
 <div id="Pessoal" class="tabcontent">
-  <h1 style="text-align: center;font-size: 2.5rem">Dados do vendedor</h1>
+  <h1 style="text-align: center;font-size: 2.5rem;font-family: 'Mountains of Christmas', cursive;
+">Dados do vendedor</h1>
   <br>
  	<div class="tab_content_person">
  		<input type="text" name="primeiro_nome" id="primeiro_nome" placeholder="Primeiro nome*" class="input_vender">

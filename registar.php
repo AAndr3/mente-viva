@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include('includes/config.php');
+include('includes/servidor.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +39,7 @@ include('includes/config.php');
       <form method="post">
       	<?php
       	if(isset($_SESSION['erros'])) { ?>
-      		<p><?php echo $_SESSION['erros'];?></p> <?php 
+      		<p style="color:red"><?php echo $_SESSION['erros'];?></p> <?php 
       	}
       	?>
 
